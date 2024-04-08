@@ -4,9 +4,9 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
 
     const links = <>
-        <li className="mr-2"><NavLink to={'/'}>Home</NavLink></li>
-        <li className="mr-2"><NavLink>About</NavLink></li>
-        <li className="mr-2"><NavLink>About</NavLink></li>
+        <li className="hover:text-white hover:bg-[#F94D1D] hover:rounded-lg"><NavLink to="/">Home</NavLink></li>   
+        <li className="hover:text-white hover:bg-[#F94D1D] hover:rounded-lg"><NavLink to="/about">About Us</NavLink></li>
+        <li className="hover:text-white hover:bg-[#F94D1D] hover:rounded-lg"><NavLink to="/update">Update Profile</NavLink></li>
     </>
     return (
         <div className="navbar bg-base-100 shadow-lg">
@@ -27,7 +27,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Login</a>
+                <NavLink to={'/login'} className="btn border text-[#F94D1D] border-[#F94D1D] hover:bg-[#F94D1D] hover:text-white">Login</NavLink>
             </div>
         </div>
     );

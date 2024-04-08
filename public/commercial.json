@@ -1,0 +1,75 @@
+[
+    {
+      "id": 1,
+      "estate_title": "Modern Office Building",
+      "segment_name": "Office",
+      "description": "A state-of-the-art office building equipped with modern amenities.",
+      "price": 5000000,
+      "status": "sale",
+      "area": 20000,
+      "location": "Downtown Business District",
+      "facilities": ["Conference Rooms", "Cafeteria", "Parking Garage"],
+      "image": "office_building.jpg"
+    },
+    {
+      "id": 2,
+      "estate_title": "Retail Space in Prime Location",
+      "segment_name": "Retail",
+      "description": "Spacious retail space located in a bustling shopping district.",
+      "price": 10000,
+      "status": "rent",
+      "area": 5000,
+      "location": "City Center Mall",
+      "facilities": ["Storefront Windows", "Storage Room", "Restroom"],
+      "image": "retail_space.jpg"
+    },
+    {
+      "id": 3,
+      "estate_title": "Warehouse for Industrial Use",
+      "segment_name": "Industrial",
+      "description": "Large warehouse suitable for storage and distribution operations.",
+      "price": 3000000,
+      "status": "sale",
+      "area": 50000,
+      "location": "Industrial Park",
+      "facilities": ["Loading Docks", "High Ceilings", "Security System"],
+      "image": "warehouse.jpg"
+    },
+    {
+      "id": 4,
+      "estate_title": "Restaurant with Outdoor Patio",
+      "segment_name": "Restaurant",
+      "description": "Popular restaurant featuring a spacious outdoor dining area.",
+      "price": 1500000,
+      "status": "sale",
+      "area": 3000,
+      "location": "City Waterfront",
+      "facilities": ["Outdoor Seating", "Fully Equipped Kitchen", "Bar Area"],
+      "image": "restaurant.jpg"
+    },
+    {
+      "id": 5,
+      "estate_title": "Entertainment Venue",
+      "segment_name": "Entertainment",
+      "description": "Versatile entertainment venue suitable for various events.",
+      "price": 2000000,
+      "status": "sale",
+      "area": 10000,
+      "location": "Downtown Entertainment District",
+      "facilities": ["Stage", "Sound System", "Bar Area"],
+      "image": "entertainment_venue.jpg"
+    },
+    {
+      "id": 6,
+      "estate_title": "Commercial Land",
+      "segment_name": "Land",
+      "description": "Prime commercial land for development or investment.",
+      "price": 500000,
+      "status": "sale",
+      "area": 50000,
+      "location": "Suburban Business Area",
+      "facilities": ["N/A"],
+      "image": "commercial_land.jpg"
+    }
+  ]
+  
