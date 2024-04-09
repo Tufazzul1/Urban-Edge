@@ -5,16 +5,16 @@ import { AuthContext } from "../provider/AuthProvider";
 
 const Navbar = () => {
 
-    const {user, logOut} = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     // console.log(user)
 
-    const handleSignOut = () =>{
-       logOut()
-       .then()
+    const handleSignOut = () => {
+        logOut()
+            .then()
     }
 
     const links = <>
-        <li className="hover:text-white hover:bg-[#F94D1D] hover:rounded-lg"><NavLink to="/">Home</NavLink></li>   
+        <li className="hover:text-white hover:bg-[#F94D1D] hover:rounded-lg"><NavLink to="/">Home</NavLink></li>
         <li className="hover:text-white hover:bg-[#F94D1D] hover:rounded-lg"><NavLink to="/about">About Us</NavLink></li>
         <li className="hover:text-white hover:bg-[#F94D1D] hover:rounded-lg"><NavLink to="/update">Update Profile</NavLink></li>
     </>
@@ -36,12 +36,18 @@ const Navbar = () => {
                     {links}
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-end gap-2">
                 {
                     user ?
-                    <button onClick={handleSignOut} className="btn border text-[#F94D1D] border-[#F94D1D] hover:bg-[#F94D1D] hover:text-white">Log Out</button>
-                    :
-                    <NavLink to={'/login'} className="btn border text-[#F94D1D] border-[#F94D1D] hover:bg-[#F94D1D] hover:text-white">Login</NavLink>
+                        <button onClick={handleSignOut} className="btn border text-[#F94D1D] border-[#F94D1D] hover:bg-[#F94D1D] hover:text-white">Log Out</button>
+                        :
+                        <NavLink to={'/login'} className="btn border text-[#F94D1D] border-[#F94D1D] hover:bg-[#F94D1D] hover:text-white">Login</NavLink>
+                }
+
+                {
+                    user ? ""
+                        :
+                        <NavLink to={'/register'} className="btn border text-[#F94D1D] border-[#F94D1D] hover:bg-[#F94D1D] hover:text-white">Register</NavLink>
                 }
             </div>
         </div>
