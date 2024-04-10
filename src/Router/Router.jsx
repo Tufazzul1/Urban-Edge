@@ -4,6 +4,7 @@ import Root from "../components/Root/Root";
 import AboutUs from "../components/AboutUs/AboutUs";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
+import EstateDetails from "../components/EstateDetails/EstateDetails";
 
 const router = createBrowserRouter([
     {
@@ -12,7 +13,12 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: ()=> fetch('/commercial.json')
+            },
+            {
+                path : '/estates/:id',
+                element: <EstateDetails></EstateDetails>
             },
             {
                 path: '/about',
@@ -26,6 +32,7 @@ const router = createBrowserRouter([
                 path : '/register',
                 element: <Register></Register>
             }
+            
         ]
     },
 ]);

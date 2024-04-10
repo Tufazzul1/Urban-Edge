@@ -9,7 +9,7 @@
     "area": 20000,
     "location": "Downtown Business District",
     "facilities": ["Conference Rooms", "Cafeteria", "Parking Garage"],
-    "image": "office_building.jpg"
+    "image": "https://i.ibb.co/7v4jJcQ/pexels-karl-solano-2883049.jpg"
   },
   {
     "id": 2,
@@ -21,7 +21,7 @@
     "area": 5000,
     "location": "City Center Mall",
     "facilities": ["Storefront Windows", "Storage Room", "Restroom"],
-    "image": "retail_space.jpg"
+    "image": "https://i.ibb.co/ZhzxYqp/pexels-pixabay-159839.jpg"
   },
   {
     "id": 3,
@@ -33,7 +33,7 @@
     "area": 50000,
     "location": "Industrial Park",
     "facilities": ["Loading Docks", "High Ceilings", "Security System"],
-    "image": "warehouse.jpg"
+    "image": "https://i.ibb.co/L9BBxjt/pexels-pixabay-236705.jpg"
   },
   {
     "id": 4,
@@ -45,7 +45,7 @@
     "area": 3000,
     "location": "City Waterfront",
     "facilities": ["Outdoor Seating", "Fully Equipped Kitchen", "Bar Area"],
-    "image": "restaurant.jpg"
+    "image": "https://i.ibb.co/JRSkTGG/pexels-life-of-pix-67468.jpg"
   },
   {
     "id": 5,
@@ -57,7 +57,7 @@
     "area": 40000,
     "location": "Financial District",
     "facilities": ["Executive Suites", "Fitness Center", "Sky Lounge"],
-    "image": "office_tower.jpg"
+    "image": "https://i.ibb.co/xfDfTJy/pexels-hach-wang-4238789.jpg"
   },
   {
     "id": 6,
@@ -69,7 +69,7 @@
     "area": 2000,
     "location": "Fashion Avenue",
     "facilities": ["Showroom", "Fitting Rooms", "VIP Lounge"],
-    "image": "retail_boutique.jpg"
+    "image": "https://i.ibb.co/0VGkLr4/pexels-edgars-kisuro-1488463.jpg"
   },
   {
     "id": 7,
@@ -81,7 +81,7 @@
     "area": 60000,
     "location": "Industrial Zone",
     "facilities": ["Production Floor", "Warehousing Area", "Loading Bays"],
-    "image": "manufacturing_plant.jpg"
+    "image": "https://i.ibb.co/z796Mvc/pexels-life-of-pix-2391.jpg"
   },
   {
     "id": 8,
@@ -93,7 +93,7 @@
     "area": 2500,
     "location": "Suburban Area",
     "facilities": ["Indoor Seating", "Outdoor Patio", "Bar Counter"],
-    "image": "casual_dining.jpg"
+    "image": "https://i.ibb.co/PZVV9JK/pexels-wendy-wei-2813132.jpg"
   },
   {
     "id": 9,
@@ -105,6 +105,6 @@
     "area": 80000,
     "location": "City Center",
     "facilities": ["Office Suites", "Retail Shops", "Restaurants"],
-    "image": "commercial_complex.jpg"
+    "image": "https://i.ibb.co/RH7JhtX/pexels-pixabay-269077.jpg"
   }
 ]
