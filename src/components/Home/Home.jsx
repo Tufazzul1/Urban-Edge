@@ -10,7 +10,6 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-
             <div>
                 <div className="text-center mt-8 p-4">
                     <h2 className="text-3xl font-bold">Commercial Real Estate Listings</h2>

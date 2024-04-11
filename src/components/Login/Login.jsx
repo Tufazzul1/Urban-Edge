@@ -1,13 +1,16 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link , useLocation, useNavigate} from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 
 
 const Login = () => {
 
-    const {signIn} = useContext(AuthContext)
+    const { signIn } = useContext(AuthContext);
+    const location = useLocation();
+    console.log('Location from login page',location);
+    const navigate = useNavigate();
 
-    const handleLogin = e =>{
+    const handleLogin = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
 
@@ -17,8 +20,15 @@ const Login = () => {
 
 
         signIn(email, password)
-        .then()
-        .catch()
+            .then(result =>{
+                console.log(result.user);
+
+                // navigate 
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch(error =>{
+                console.log(error)
+            })
     }
     return (
         <div className="hero min-h-screen bg-base-200">
