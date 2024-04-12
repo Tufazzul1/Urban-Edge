@@ -21,7 +21,6 @@ const Estate = ({ estates }) => {
                 <div className="card-actions justify-end">
 
                     <button className="btn btn-ghost">
-                        {/* <Link to={`/estates/${id, estate_title}`}>View Property</Link> */}
                         <Link to={`/estates/${id}`}>View Property</Link>
 
                     </button>

@@ -1,10 +1,17 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Register = () => {
 
-    const {createUser} = useContext(AuthContext)
+    const { createUser } = useContext(AuthContext);
+    const navigate = useNavigate()
+
+    // const [regSuccess, setRegSuccess] = useState("");
+    // const [regError, setRegError] = useState("");
 
 
     const handleRegister = e => {
@@ -16,14 +23,29 @@ const Register = () => {
         const password = form.get('password')
         console.log(name, email, photo, password);
 
+        if (password.length < 6) {
+            toast.error("Password should be atleast 6 character");
+            return
+        }
+        else if(!/[A-Z]/.test(password)){
+            toast.error("Password must contain at least one uppercase letter");
+            return;
+        }
+        else if(!/[a-z]/.test(password)){
+            toast.error("Password must contain at least one lowwercase letter");
+            return
+        }
 
         createUser(email, password)
-        .then(result =>{
-            console.log(result.user)
-        })
-       .catch(error =>{
-        console.log(error)
-       })
+            .then(result => {
+                console.log(result.user)
+                alert("User created successfully")
+                navigate('/');
+            })
+            .catch(error => {
+                console.log(error);
+                toast.error("Invalid email or password");
+            })
     }
     return (
         <div className="hero min-h-screen bg-base-200 mt-4">
@@ -84,6 +106,7 @@ const Register = () => {
                 </form>
                 <p className="text-center mb-4">Already have an account ? Please <Link to={'/login'} className="text-blue-700 font-bold">Login</Link></p>
             </div>
+            <ToastContainer />
         </div>
     );
 };
