@@ -5,7 +5,7 @@ const Estate = ({ estates }) => {
     const { id, estate_title, segment_name, description, image, price, status, area, location } = estates;
 
     return (
-        <div className="card card-compact bg-base-100 shadow-xl p-3 hover:border-2 hover:border-[#F94D1D]">
+        <div className="card card-compact bg-base-100 shadow-xl p-3 border-1 border-[#F94D1D] hover:border-2 hover:border-[#F94D1D]">   
             <figure><img src={image} alt="" /></figure>
             <div className="card-body">
                 <div className="flex gap-2">
@@ -20,9 +20,8 @@ const Estate = ({ estates }) => {
                 <p>Location : {location}</p>
                 <div className="card-actions justify-end">
 
-                    <button className="btn btn-ghost">
+                    <button className="btn btn-error w-full ">
                         <Link to={`/estates/${id}`}>View Property</Link>
-
                     </button>
 
                 </div>

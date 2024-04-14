@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { toast, ToastContainer } from 'react-toastify';
@@ -7,8 +7,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
 
-    const { createUser } = useContext(AuthContext);
-    const navigate = useNavigate()
+    const { createUser, googleLogin } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     // const [regSuccess, setRegSuccess] = useState("");
     // const [regError, setRegError] = useState("");
@@ -104,7 +104,14 @@ const Register = () => {
                         <button className="btn btn-primary">Register</button>
                     </div>
                 </form>
+
+                <div className="text-center font-bold">
+                    <h3>Continue with </h3>
+                    <button onClick={() => googleLogin()} className="btn">Google</button>
+
+                </div>
                 <p className="text-center mb-4">Already have an account ? Please <Link to={'/login'} className="text-blue-700 font-bold">Login</Link></p>
+
             </div>
             <ToastContainer />
         </div>
