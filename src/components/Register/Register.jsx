@@ -3,15 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
 
-    const { createUser, googleLogin } = useContext(AuthContext);
+    const { createUser } = useContext(AuthContext);
     const navigate = useNavigate();
-
-    // const [regSuccess, setRegSuccess] = useState("");
-    // const [regError, setRegError] = useState("");
 
 
     const handleRegister = e => {
@@ -27,11 +25,11 @@ const Register = () => {
             toast.error("Password should be atleast 6 character");
             return
         }
-        else if(!/[A-Z]/.test(password)){
+        else if (!/[A-Z]/.test(password)) {
             toast.error("Password must contain at least one uppercase letter");
             return;
         }
-        else if(!/[a-z]/.test(password)){
+        else if (!/[a-z]/.test(password)) {
             toast.error("Password must contain at least one lowwercase letter");
             return
         }
@@ -48,10 +46,18 @@ const Register = () => {
             })
     }
     return (
-        <div className="hero min-h-screen bg-base-200 mt-4">
+        <div className="hero min-h-screen bg-base-200 flex flex-col lg:flex-row w-full">
+            <Helmet>
+                <title>Home | UrbanEdge</title>
+            </Helmet>
+            <div className="lg:w-1/2  p-4 lg:p-8">
+                <h2 className="text-4xl font-bold mt-4 text-gray-500">Please Register</h2>
+                <p className="text-gray-500 mt-3">
+                Join our real estate community today to gain access to personalized property alerts and expert resources, empowering you to make informed investment decisions.
+                </p>
+            </div>
 
-            <div className="card shrink-0 w-full max-w-lg shadow-2xl bg-base-100 ">
-                <h2 className="text-4xl text-center font-bold mt-4 text-gray-500">Please Register</h2>
+            <div className="card shrink-0  max-w-lg shadow-2xl bg-base-100 lg:w-1/2">
                 <form onSubmit={handleRegister} className="card-body p-4">
                     <div className="form-control">
                         <label className="label">
@@ -101,15 +107,10 @@ const Register = () => {
                         </label>
                     </div>
                     <div className="form-control mt-6">
-                        <button className="btn btn-primary">Register</button>
+                        <button className="btn border hover:text-[#F94D1D] border-[#F94D1D] bg-[#F94D1D] text-white hover:border-[#F94D1D]">Register</button>
                     </div>
                 </form>
 
-                <div className="text-center font-bold">
-                    <h3>Continue with </h3>
-                    <button onClick={() => googleLogin()} className="btn">Google</button>
-
-                </div>
                 <p className="text-center mb-4">Already have an account ? Please <Link to={'/login'} className="text-blue-700 font-bold">Login</Link></p>
 
             </div>

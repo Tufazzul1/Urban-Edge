@@ -5,12 +5,15 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa6";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FaGoogle } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 
 
 const Login = () => {
 
-    const { signIn } = useContext(AuthContext);
+    const { signIn, googleLogin, githubLogin } = useContext(AuthContext);
     const location = useLocation();
     console.log('Location from login page', location);
     const navigate = useNavigate();
@@ -47,10 +50,17 @@ const Login = () => {
 
 
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen bg-base-200 flex flex-col lg:flex-row w-full ">
+            <Helmet>
+                <title>Login | UrbanEdge</title>
+            </Helmet>
+            <div className="lg:w-1/2  p-4 lg:p-8">
+                <h2 className="text-4xl font-bold mt-4 text-gray-500">Please Login</h2>
+                <p className="text-gray-500 mt-3">Welcome to UrbanEdge, where accessing your real estate profile is just a login away. Experience seamless access to your property listings and personalized services with our secure login feature.</p>
+            </div>
 
-            <div className="card shrink-0 w-full max-w-lg shadow-2xl bg-base-100">
-                <h2 className="text-4xl text-center font-bold mt-4 text-gray-500">Please Login</h2>
+            <div className="card shrink-0  max-w-lg shadow-2xl bg-base-100 lg:w-1/2">
+
                 <form onSubmit={handleLogin} className="card-body">
                     <div className="form-control">
                         <label className="label">
@@ -66,7 +76,7 @@ const Login = () => {
                     <div className="form-control relative">
                         <label className="label">
                             <span className="label-text">Password</span>
-                            
+
                         </label>
                         <input
                             type={showPassword ? "text" : "password"}
@@ -83,10 +93,16 @@ const Login = () => {
 
 
                     <div className="form-control mt-6">
-                        <button className="btn btn-primary">Login</button>
+                        <button className="btn border hover:text-[#F94D1D] border-[#F94D1D] bg-[#F94D1D] text-white hover:border-[#F94D1D]">Login</button>
                     </div>
                 </form>
-                <p className="text-center mb-4">New in here ? Please <Link to={'/register'} className="text-blue-700 font-bold">Register</Link></p>
+
+                <div className="text-center font-bold space-y-3">
+                    <h3>Login with </h3>
+                    <button onClick={() => googleLogin()} className="btn  mr-2 border text-[#F94D1D] border-[#F94D1D] hover:bg-[#F94D1D] hover:text-white"> <FaGoogle />Google</button>
+                    <button onClick={() => githubLogin()} className="btn  border text-[#F94D1D] border-[#F94D1D] hover:bg-[#F94D1D] hover:text-white">Github <FaGithub /></button>
+                </div>
+                <p className="text-center mb-4 mt-4">New in here ? Please <Link to={'/register'} className="text-blue-700 font-bold">Register</Link></p>
             </div>
             <ToastContainer />
         </div>

@@ -2,6 +2,7 @@ import Banner from "../Banner/Banner";
 import { useLoaderData } from "react-router-dom"
 import Estate from "../Estate/Estate";
 import Footer from "../../shared/Footer";
+import { Helmet } from "react-helmet-async";
 
 
 const Home = () => {
@@ -9,6 +10,9 @@ const Home = () => {
     console.log(estates)
     return (
         <div>
+            <Helmet>
+                <title>Home | UrbanEdge</title>
+            </Helmet>
             <Banner></Banner>
             <div>
                 <div className="text-center mt-8 p-4">

@@ -10,7 +10,8 @@ const Navbar = () => {
 
     const handleSignOut = () => {
         logOut()
-            .then()
+        .then()
+        .catch()
     }
 
     const links = <>
@@ -37,7 +38,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-2">
-             
+
 
                 {
                     user ?
@@ -62,12 +63,12 @@ const Navbar = () => {
                         <NavLink to={'/register'} className="btn border text-[#F94D1D] border-[#F94D1D] hover:bg-[#F94D1D] hover:text-white">Register</NavLink>
                 }
 
-{
+                {
                     user ?
                         <button onClick={handleSignOut} className="btn border text-[#F94D1D] border-[#F94D1D] hover:bg-[#F94D1D] hover:text-white">Log Out</button>
                         :
                         <NavLink to={'/login'} className="btn border text-[#F94D1D] border-[#F94D1D] hover:bg-[#F94D1D] hover:text-white">Login</NavLink>
-                } 
+                }
             </div>
 
 
