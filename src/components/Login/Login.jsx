@@ -18,8 +18,6 @@ const Login = () => {
     console.log('Location from login page', location);
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
-    // const [logSuccess, setLogSuccess] = useState("");
-    // const [logError, setLogError] = useState("");
 
     const handleLogin = e => {
         e.preventDefault();
@@ -27,10 +25,6 @@ const Login = () => {
 
         const email = form.get('email');
         const password = form.get('password');
-
-        // clear the message 
-        // setLogError('');
-        // setLogSuccess('');
 
 
         signIn(email, password)

@@ -1,15 +1,17 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Helmet } from "react-helmet-async";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 const Register = () => {
 
     const { createUser } = useContext(AuthContext);
     const navigate = useNavigate();
+    const [showPassword, setShowPassword] = useState(false);
 
 
     const handleRegister = e => {
@@ -48,12 +50,12 @@ const Register = () => {
     return (
         <div className="hero min-h-screen bg-base-200 flex flex-col lg:flex-row w-full">
             <Helmet>
-                <title>Home | UrbanEdge</title>
+                <title>Register | UrbanEdge</title>
             </Helmet>
             <div className="lg:w-1/2  p-4 lg:p-8">
                 <h2 className="text-4xl font-bold mt-4 text-gray-500">Please Register</h2>
                 <p className="text-gray-500 mt-3">
-                Join our real estate community today to gain access to personalized property alerts and expert resources, empowering you to make informed investment decisions.
+                    Join our real estate community today to gain access to personalized property alerts and expert resources, empowering you to make informed investment decisions.
                 </p>
             </div>
 
@@ -92,16 +94,17 @@ const Register = () => {
                             className="input input-bordered"
                             required />
                     </div>
-                    <div className="form-control">
+                    <div className="form-control relative">
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
                         <input
-                            type="password"
+                            type={showPassword ? "text" : "password"}
                             name="password"
                             placeholder="Password"
                             className="input input-bordered"
                             required />
+                        <span onClick={() => setShowPassword(!showPassword)} className="absolute top-1/2 right-4 transform -translate-y-1/2">{showPassword ? <FaEyeSlash /> : <FaEye />}</span>
                         <label className="label">
                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                         </label>

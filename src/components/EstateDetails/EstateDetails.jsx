@@ -16,17 +16,17 @@ const EstateDetails = () => {
               <Helmet>
                 <title>Estate Details | UrbanEdge</title>
             </Helmet>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mt-6">
-                <div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mt-6  gap-4">
+                <div className="border border-gray-200 p-4 shadow-lg">
                     <h3 className="font-bold text-[#F94D1D]">#ID : {id}</h3>
                     <h3 className="text-3xl font-bold">{details.estate_title}</h3>
-                    <h5>Segment : {details.segment_name}</h5>
-                    <h5>Description : {details.description}</h5>
-                    <h2>Price : {details.price}</h2>
-                    <h2>Status : {details.status}</h2>
-                    <h2>Area : {details.area}</h2>
-                    <h2>Location : {details.location}</h2>
-                    <h2>Facilities :</h2>
+                    <h5><span className="font-bold">Segment :</span> {details.segment_name}</h5>
+                    <h5><span className="font-bold">Description :</span> {details.description}</h5>
+                    <h2><span className="font-bold">Price :</span> {details.price}</h2>
+                    <h2><span className="font-bold">Status :</span> {details.status}</h2>
+                    <h2><span className="font-bold">Area :</span> {details.area}</h2>
+                    <h2><span className="font-bold">Location :</span> {details.location}</h2>
+                    <h2><span className="font-bold">Facilities :</span></h2>
                     <ul className="list-disc ml-4">
                         {details.facilities.map((facility, index) => (
                             <li key={index}>{facility}</li>
