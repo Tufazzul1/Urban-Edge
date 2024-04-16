@@ -13,15 +13,14 @@ const UpdateProfile = () => {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: "",
-        email: "",
         photo: ""
     });
 
     const handleProfileUpdate = e => {
         e.preventDefault();
-        const { name, photo, email } = formData;
+        const { name, photo } = formData;
 
-        updateUserProfile(name, email, photo)
+        updateUserProfile(name, photo)
             .then(() => {
                 toast.success("User profile updated successfully");
                 setTimeout(() => {
@@ -55,10 +54,10 @@ const UpdateProfile = () => {
             </Helmet>
             <div className="flex flex-col justify-center items-center lg:flex-row mt-6 gap-6">
                 <div className="lg:w-1/2  p-4 lg:p-8">
-                    <h2 className="text-4xl font-bold mt-4 text-gray-500">Your Profile</h2>
+                    <h2 className="text-3xl font-bold mt-4 text-gray-500">Your Profile Information</h2>
                     <p className="text-gray-500 mt-3"><span className="font-bold">Name:</span> {user.displayName}</p>
                     <p className="text-gray-500 mt-3"><span className="font-bold">Email:</span> {user.email}</p>
-                    <p className="text-gray-500 mt-3"><span className="font-bold">Profile Image :</span><img className="w-[400px] rounded-xl" src={user.photoURL} alt="" /></p>
+                    <p className="text-gray-500 mt-3"><span className="font-bold">Profile Image :</span><img className="w-[300px] rounded-xl" src={user.photoURL} alt="" /></p>
                 </div>
 
                 <div className="card shrink-0 max-w-lg shadow-2xl bg-base-100 lg:w-1/2 mb-10">
@@ -76,19 +75,6 @@ const UpdateProfile = () => {
                                 value={formData.name}
                                 onChange={handleInputChange}
                                 placeholder="Your Name"
-                                className="input input-bordered"
-                                required />
-                        </div>
-                        <div className="form-control">
-                            <label className="label">
-                                <span className="label-text">Email</span>
-                            </label>
-                            <input
-                                type="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleInputChange}
-                                placeholder="Email"
                                 className="input input-bordered"
                                 required />
                         </div>

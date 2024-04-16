@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import { GoogleAuthProvider } from "firebase/auth";
 import { GithubAuthProvider } from "firebase/auth"
 import { updateProfile } from "firebase/auth";
-import { updateEmail } from "firebase/auth";
 
 
 export const AuthContext = createContext(null);
@@ -29,11 +28,10 @@ const AuthProvider = ({ children }) => {
 
 
     // update userprofile
-    const updateUserProfile = (name, email, photo) => {
-        console.log("Update Profile:", name, email, photo);
+    const updateUserProfile = (name, photo) => {
+        console.log("Update Profile:", name, photo);
         return updateProfile(auth.currentUser, {
             displayName: name,
-            email: email,
             photoURL: photo
         })
     }

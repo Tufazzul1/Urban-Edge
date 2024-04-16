@@ -19,7 +19,7 @@ const EstateDetails = () => {
 
             <div className="h-[300px] rounded-lg flex items-center justify-center text-white" style={{ backgroundImage: 'url(https://i.ibb.co/HqhQMjd/background.jpg)' }}>
 
-                <div className="w-1/2 text-center">
+                <div className="p-6 lg:w-1/2 text-center">
                     <h1 className="mb-5 text-5xl font-bold">Estate details</h1>
                     <p>
                         The Estate Details section offers a meticulous breakdown of each property, encompassing vital specifics such as dimensions, amenities, and unique features.
