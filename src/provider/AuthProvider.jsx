@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import { GoogleAuthProvider } from "firebase/auth";
 import { GithubAuthProvider } from "firebase/auth"
 import { updateProfile } from "firebase/auth";
+import { updateEmail } from "firebase/auth";
 
 
 export const AuthContext = createContext(null);
@@ -21,18 +22,22 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    const createUser = (name, email, photo, password) => {
-        setLoading(true)
-        return createUserWithEmailAndPassword(auth, name, email, photo, password);
+    const createUser = (email, password) => {
+        setLoading(true);
+        return createUserWithEmailAndPassword(auth, email, password);
     }
 
+
     // update userprofile
-    const updateUserProfile = (name, photo) => {
+    const updateUserProfile = (name, email, photo) => {
+        console.log("Update Profile:", name, email, photo);
         return updateProfile(auth.currentUser, {
             displayName: name,
+            email: email,
             photoURL: photo
         })
     }
+
 
     const signIn = (email, password) => {
         setLoading(true)
@@ -71,7 +76,7 @@ const AuthProvider = ({ children }) => {
         loading,
         googleLogin,
         githubLogin,
-        updateUserProfile
+        updateUserProfile,
     }
     return (
         <AuthContext.Provider value={authInfo}>

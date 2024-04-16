@@ -15,32 +15,36 @@ const AboutUs = () => {
 
             <div className="mt-10 grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-5">
                 <div className="card card-compact bg-base-100 shadow-xl">
-                    <figure><img className="p-4 rounded-3xl" src="https://i.ibb.co/myJbXwF/pexels-nathan-cowley-1300402.jpg" alt="Man" /></figure>
-                    <div className="card-body">
-                        <h2 className="card-title">Mr Jack Sparrow</h2>
+                    <figure><img className="p-4 rounded-3xl " src="https://i.ibb.co/myJbXwF/pexels-nathan-cowley-1300402.jpg" alt="Man" /></figure>
+                    <div className="card-body text-gray-500">
+                        <h2 className="card-title text-[#F94D1D]">Mr Jack Sparrow</h2>
                         <h4 className="text-2xl font-semibold">Agent Extraordinaire</h4>
                         <p>Meet our seasoned real estate agent, Jack, with over 8 years of experience in the industry. With a passion for finding the perfect match between clients and properties, Jack is dedicated to guiding you through every step of your real estate journey.</p>
-                       
+
                     </div>
                 </div>
                 <div className="card card-compact bg-base-100 shadow-xl">
-                    <figure><img className="p-4 rounded-lg" src="https://i.ibb.co/dLB71QD/pexels-justin-shaifer-1222271.jpg" alt="Man" /></figure>
-                    <div className="card-body">
-                        <h2 className="card-title">Mr Janathan Wick</h2>
+                    <figure><img className="p-4 rounded-3xl" src="https://i.ibb.co/dLB71QD/pexels-justin-shaifer-1222271.jpg" alt="Man" /></figure>
+                    <div className="card-body text-gray-500">
+                        <h2 className="card-title text-[#F94D1D]">Mr Janathan Wick</h2>
                         <h4 className="text-2xl font-semibold">Market Analyst Maven</h4>
                         <p>IIntroducing our meticulous market analyst, Wick, who brings a wealth of knowledge and expertise in analyzing real estate trends and insights. From market fluctuations to investment opportunities, Wick ensures that you make informed decisions to maximize your investments.</p>
-                       
+
                     </div>
                 </div>
                 <div className="card card-compact bg-base-100 shadow-xl">
-                    <figure><img className="p-4 rounded-lg" src="https://i.ibb.co/G2C5B1G/pexels-pixabay-39866.jpg" alt="Man" /></figure>
-                    <div className="card-body">
-                        <h2 className="card-title">Mr  Williums</h2>
+                    <figure><img className="p-4 rounded-3xl" src="https://i.ibb.co/G2C5B1G/pexels-pixabay-39866.jpg" alt="Man" /></figure>
+                    <div className="card-body text-gray-500">
+                        <h2 className="card-title text-[#F94D1D]">Mr  Williums</h2>
                         <h4 className="text-2xl font-semibold">Client Care Champion</h4>
                         <p>Say hello to our client care champion, Williums, whose top priority is your satisfaction and peace of mind. With a warm and attentive approach, Williums ensures that your real estate experience is seamless and stress-free, from initial consultation to closing the deal.</p>
-                       
+
                     </div>
                 </div>
+            </div>
+
+            <div className="mt-16">
+                <h2 className="text-4xl font-bold text-center">About Us</h2>
             </div>
 
 

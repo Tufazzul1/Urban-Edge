@@ -27,7 +27,9 @@ const Navbar = () => {
     const links = <>
         <li className="hover:text-white hover:bg-[#F94D1D] hover:rounded-lg"><NavLink to="/">Home</NavLink></li>
         <li className="hover:text-white hover:bg-[#F94D1D] hover:rounded-lg"><NavLink to="/Team">Team</NavLink></li>
-        <li className="hover:text-white hover:bg-[#F94D1D] hover:rounded-lg"><NavLink to="/update">Update Profile</NavLink></li>
+        {
+            user && <li className="hover:text-white hover:bg-[#F94D1D] hover:rounded-lg"><NavLink to="/update">Update Profile</NavLink></li>
+        }
     </>
     return (
         <div className="navbar bg-base-100 shadow-lg">
