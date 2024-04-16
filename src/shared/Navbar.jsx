@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
@@ -14,10 +14,20 @@ const Navbar = () => {
         .catch()
     }
 
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleMouseEnter = () => {
+      setIsOpen(true);
+    };
+  
+    const handleMouseLeave = () => {
+      setIsOpen(false);
+    };
+
     const links = <>
         <li className="hover:text-white hover:bg-[#F94D1D] hover:rounded-lg"><NavLink to="/">Home</NavLink></li>
+        <li className="hover:text-white hover:bg-[#F94D1D] hover:rounded-lg"><NavLink to="/Team">Team</NavLink></li>
         <li className="hover:text-white hover:bg-[#F94D1D] hover:rounded-lg"><NavLink to="/update">Update Profile</NavLink></li>
-        <li className="hover:text-white hover:bg-[#F94D1D] hover:rounded-lg"><NavLink to="/about">About Us</NavLink></li>
     </>
     return (
         <div className="navbar bg-base-100 shadow-lg">
@@ -30,7 +40,7 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <Link to={'/'} className="btn btn-ghost text-3xl font-bold text-[#F94D1D]">UrbanEdge</Link>
+                <Link to={'/'} className="btn btn-ghost text-xl lg:text-3xl font-bold text-[#F94D1D]">UrbanEdge</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -42,23 +52,22 @@ const Navbar = () => {
 
                 {
                     user ?
-                        <div className="dropdown dropdown-end">
-                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                                <div className="w-10 rounded-full">
-                                    <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                                </div>
-                            </div>
-                            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                                <li>
-                                    <a className="justify-between">
-                                        Profile
-                                        <span className="badge">New</span>
-                                    </a>
-                                </li>
-                                <li><a>Settings</a></li>
-                                <li><a>Logout</a></li>
-                            </ul>
-                        </div>
+                    <div className="dropdown dropdown-end" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                      <div className="w-10 rounded-full">
+                        <img
+                          alt="Tailwind CSS Navbar component"
+                          src={user?.photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"}
+                        />
+                      </div>
+                    </div>
+                    {isOpen && (
+                      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[2] p-3 shadow bg-base-100 w-60">
+                        <li>Name : {user?.displayName || "Name not found"}</li>
+                        <li>Email : {user?.email || "Email not found"}</li>
+                      </ul>
+                    )}
+                  </div>
                         :
                         <NavLink to={'/register'} className="btn border text-[#F94D1D] border-[#F94D1D] hover:bg-[#F94D1D] hover:text-white">Register</NavLink>
                 }

@@ -4,6 +4,7 @@ import app from "../firebase/firebase-config";
 import PropTypes from 'prop-types';
 import { GoogleAuthProvider } from "firebase/auth";
 import { GithubAuthProvider } from "firebase/auth"
+import { updateProfile } from "firebase/auth";
 
 
 export const AuthContext = createContext(null);
@@ -25,17 +26,25 @@ const AuthProvider = ({ children }) => {
         return createUserWithEmailAndPassword(auth, name, email, photo, password);
     }
 
+    // update userprofile
+    const updateUserProfile = (name, photo) => {
+        return updateProfile(auth.currentUser, {
+            displayName: name,
+            photoURL: photo
+        })
+    }
+
     const signIn = (email, password) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
     const googleLogin = () => {
-        return signInWithPopup(auth, googleProvider) 
+        return signInWithPopup(auth, googleProvider)
     }
 
-    const githubLogin = () =>{
-        return signInWithPopup(auth,githubProvider)
+    const githubLogin = () => {
+        return signInWithPopup(auth, githubProvider)
     }
 
     const logOut = () => {
@@ -61,7 +70,8 @@ const AuthProvider = ({ children }) => {
         logOut,
         loading,
         googleLogin,
-        githubLogin
+        githubLogin,
+        updateUserProfile
     }
     return (
         <AuthContext.Provider value={authInfo}>

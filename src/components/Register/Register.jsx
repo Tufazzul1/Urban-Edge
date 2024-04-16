@@ -36,11 +36,14 @@ const Register = () => {
             return
         }
 
-        createUser(email, password)
+        createUser(email, password, name, photo)
             .then(result => {
-                console.log(result.user)
-                alert("User created successfully")
-                navigate('/');
+                console.log(result.user);
+                toast.success("User created successfully")
+                setTimeout(() => {
+                    // navigate 
+                    navigate('/');
+                }, 2000);
             })
             .catch(error => {
                 console.log(error);

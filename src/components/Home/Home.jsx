@@ -3,6 +3,9 @@ import { useLoaderData } from "react-router-dom"
 import Estate from "../Estate/Estate";
 import Footer from "../../shared/Footer";
 import { Helmet } from "react-helmet-async";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 
 const Home = () => {
@@ -35,7 +38,7 @@ const Home = () => {
                         <h2 className="text-4xl font-bold text-center">About Us</h2>
                     </div>
                     <div className="mt-10 text-gray-500">
-                        <div className="flex flex-col lg:flex-row">
+                        <div className="flex flex-col  lg:flex-row">
                             <div className="lg:w-[50%] p-4 lg:pt-20">
                                 <h2 className="text-3xl font-bold">Welcome to <span className="text-[#F94D1D]">UrbanEdge</span></h2>
                                 <p>
@@ -46,12 +49,12 @@ const Home = () => {
                                     Our mission is simple: to provide exceptional service, deliver unmatched expertise, and foster lasting relationships with our clients. Whether you are a first-time homebuyer, a seasoned investor, or looking to sell your property, we are here to guide you through every step of the process.
                                 </p>
                             </div>
-                            <div className="lg:w-[50%] p-4">
+                            <div className="lg:w-[50%]  p-4">
                                 <img className=" rounded-lg" src="https://i.ibb.co/xfDfTJy/pexels-hach-wang-4238789.jpg" alt="" />
                             </div>
                         </div>
-                        <div className="flex flex-col lg:flex-row ">
-                            <div className="lg:w-[50%] p-4">
+                        <div className="flex flex-col lg:flex-row">
+                            <div className="lg:w-[50%]  p-4">
                                 <img className="rounded-lg" src="https://i.ibb.co/RH7JhtX/pexels-pixabay-269077.jpg" alt="" />
                             </div>
                             <div className="lg:w-[50%] p-4 ">
