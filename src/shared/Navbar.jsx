@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
@@ -7,21 +7,30 @@ const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext);
     // console.log(user)
+    const [isOpen, setIsOpen] = useState(false);
+    const [photoURL, setPhotoURL] = useState("");
+
+    useEffect(() => {
+        if (user) {
+            setPhotoURL(user.photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg");
+        }
+    }, [user]);
+
 
     const handleSignOut = () => {
         logOut()
-        .then()
-        .catch()
+            .then()
+            .catch()
     }
 
-    const [isOpen, setIsOpen] = useState(false);
+
 
     const handleMouseEnter = () => {
-      setIsOpen(true);
+        setIsOpen(true);
     };
-  
+
     const handleMouseLeave = () => {
-      setIsOpen(false);
+        setIsOpen(false);
     };
 
     const links = <>
@@ -54,22 +63,22 @@ const Navbar = () => {
 
                 {
                     user ?
-                    <div className="dropdown dropdown-end" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                      <div className="w-10 rounded-full">
-                        <img
-                          alt="Tailwind CSS Navbar component"
-                          src={user?.photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"}
-                        />
-                      </div>
-                    </div>
-                    {isOpen && (
-                      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[2] p-3 shadow bg-base-100 w-60">
-                        <li>Name : {user?.displayName || "Name not found"}</li>
-                        <li>Email : {user?.email || "Email not found"}</li>
-                      </ul>
-                    )}
-                  </div>
+                        <div className="dropdown dropdown-end" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                            <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img
+                                        alt="Tailwind CSS Navbar component"
+                                        src={photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"}
+                                    />
+                                </div>
+                            </div>
+                            {isOpen && (
+                                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[2] p-3 shadow bg-base-100 w-60">
+                                    <li>Name : {user.displayName || "Name not found"}</li>
+                                    <li>Email : {user.email || "Email not found"}</li>
+                                </ul>
+                            )}
+                        </div>
                         :
                         <NavLink to={'/register'} className="btn border text-[#F94D1D] border-[#F94D1D] hover:bg-[#F94D1D] hover:text-white">Register</NavLink>
                 }

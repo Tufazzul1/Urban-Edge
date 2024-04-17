@@ -1,8 +1,21 @@
-# React + Vite
+### UrbanEdge 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Website live link : 
 
-Currently, two official plugins are available:
+### Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Easy Property Search: Users can find properties quickly by filtering based on location, price, type, and amenities.
+
+* Social Authentication: Sign in with Google or GitHub accounts for simplified access.
+
+* Expert Guides: Access articles, and resources to make informed decisions about real estate investments.
+
+* User Profiles: Create profiles to save favorite properties, track search history, and manage alerts conveniently.
+
+* Social Login: Sign in using Google or GitHub accounts for a seamless and secure authentication process.
+
+
+*** NPM packeges  used ***
+* AOS package 
+* Animate.css
+* Swipper slider

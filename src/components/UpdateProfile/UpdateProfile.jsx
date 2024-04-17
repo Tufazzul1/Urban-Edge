@@ -13,14 +13,15 @@ const UpdateProfile = () => {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: "",
+        email: "",
         photo: ""
     });
 
     const handleProfileUpdate = e => {
         e.preventDefault();
-        const { name, photo } = formData;
+        const { name, email, photo } = formData;
 
-        updateUserProfile(name, photo)
+        updateUserProfile(name, email, photo)
             .then(() => {
                 toast.success("User profile updated successfully");
                 setTimeout(() => {
