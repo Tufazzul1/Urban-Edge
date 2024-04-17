@@ -1,6 +1,8 @@
 ### UrbanEdge 
 
 Website live link : 
+Firebase : https://urban-edge-1327d.web.app
+Netlify : https://urban-edge-tufazzul1.netlify.app/
 
 ### Features
 
