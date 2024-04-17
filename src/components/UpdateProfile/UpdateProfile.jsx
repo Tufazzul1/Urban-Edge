@@ -5,12 +5,11 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from "../../shared/Footer";
-import { useNavigate } from "react-router-dom";
 
 
 const UpdateProfile = () => {
-    const { user, updateUserProfile } = useContext(AuthContext);
-    const navigate = useNavigate();
+    const { user, updateUserProfile, setReFetch } = useContext(AuthContext);
+
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -24,13 +23,9 @@ const UpdateProfile = () => {
         updateUserProfile(name, email, photo)
             .then(() => {
                 toast.success("User profile updated successfully");
-                setTimeout(() => {
-                    // navigate 
-                    navigate('/');
-                }, 2000);
+                setReFetch(Date.now())
+              
             })
-
-
             .catch(error => {
                 console.log(error);
                 toast.error("Failed to update profile");
@@ -58,7 +53,7 @@ const UpdateProfile = () => {
                     <h2 className="text-3xl font-bold mt-4 text-gray-500">Your Profile Information</h2>
                     <p className="text-gray-500 mt-3"><span className="font-bold">Name:</span> {user.displayName}</p>
                     <p className="text-gray-500 mt-3"><span className="font-bold">Email:</span> {user.email}</p>
-                    <p className="text-gray-500 mt-3"><span className="font-bold">Profile Image :</span><img className="w-[300px] rounded-xl" src={user.photoURL} alt="" /></p>
+                    <p className="text-gray-500 mt-3"><span className="font-bold">Profile Image :</span><img className="w-[300px] h-[250px] rounded-xl" src={user.photoURL} alt="" /></p>
                 </div>
 
                 <div className="card shrink-0 max-w-lg shadow-2xl bg-base-100 lg:w-1/2 mb-10">

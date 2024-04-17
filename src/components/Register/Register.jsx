@@ -9,7 +9,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
 
-    const { createUser, updateUserProfile } = useContext(AuthContext);
+    const { createUser, updateUserProfile, setReFetch } = useContext(AuthContext);
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
 
@@ -40,7 +40,8 @@ const Register = () => {
             .then(() => {
                 updateUserProfile(name, email, photo)
                     .then(() => {
-                        toast.success("User Created Successfully")
+                        toast.success("User Created Successfully");
+                        setReFetch(Date.now())
                         setTimeout(() => {
                             // navigate 
                             navigate('/');

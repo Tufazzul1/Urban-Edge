@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
@@ -8,13 +8,7 @@ const Navbar = () => {
     const { user, logOut } = useContext(AuthContext);
     // console.log(user)
     const [isOpen, setIsOpen] = useState(false);
-    const [photoURL, setPhotoURL] = useState("");
 
-    useEffect(() => {
-        if (user) {
-            setPhotoURL(user.photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg");
-        }
-    }, [user]);
 
 
     const handleSignOut = () => {
@@ -43,7 +37,7 @@ const Navbar = () => {
     return (
         <div className="navbar bg-base-100 shadow-lg">
             <div className="navbar-start">
-                <div className="dropdown">
+                <div className="dropdown z-[10]">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </div>
@@ -68,7 +62,7 @@ const Navbar = () => {
                                 <div className="w-10 rounded-full">
                                     <img
                                         alt="Tailwind CSS Navbar component"
-                                        src={photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"}
+                                        src={user.photoURL || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"}
                                     />
                                 </div>
                             </div>

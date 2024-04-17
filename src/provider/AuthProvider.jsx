@@ -20,6 +20,7 @@ const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [refetch , setReFetch] = useState(null)
 
     const createUser = (email, password) => {
         setLoading(true);
@@ -65,7 +66,7 @@ const AuthProvider = ({ children }) => {
         return () => {
             unSubscribe()
         }
-    }, [])
+    }, [refetch])
 
     const authInfo = {
         user,
@@ -76,6 +77,7 @@ const AuthProvider = ({ children }) => {
         googleLogin,
         githubLogin,
         updateUserProfile,
+        setReFetch
     }
     return (
         <AuthContext.Provider value={authInfo}>
