@@ -5,9 +5,9 @@ import { Helmet } from "react-helmet-async";
 
 const EstateDetails = () => {
     const detailsData = useLoaderData();
-    console.log(detailsData);
+    // console.log(detailsData);
     const { id } = useParams();
-    console.log(id)
+    // console.log(id)
 
     const details = detailsData.find(details => details.id === parseInt(id));
 

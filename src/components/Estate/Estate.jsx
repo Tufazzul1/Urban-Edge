@@ -22,14 +22,8 @@ const Estate = ({ estates }) => {
                     <p><span className="font-bold">Price :</span> {price}</p>
                 </div>
                 <p><span className="font-bold">Area :</span> {area}</p>
-                <p><span className="font-bold">Location :</span> {location}</p>
-                <h2><span className="font-bold">Facilities :</span></h2>
-                <ul className="list-disc ml-4">
-                    {facilities.map((facility, index) => (
-                        <li key={index}>{facility}</li>
-                    ))}
-                </ul>
-                <div className="card-actions justify-end">
+
+                <div className="card-actions justify-end mt-6">
 
                     <button className="btn border hover:text-[#F94D1D] border-[#F94D1D] bg-[#F94D1D] text-white hover:border-[#F94D1D] w-full ">
                         <Link to={`/estates/${id}`}>View Property</Link>

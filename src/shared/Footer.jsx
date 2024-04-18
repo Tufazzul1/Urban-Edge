@@ -15,7 +15,7 @@ const Footer = () => {
                 </nav>
                 <nav className="flex flex-col">
                     <h6 className="footer-title text-[#F94D1D]">Company</h6>
-                    <Link to={'/home'} className="link link-hover">Home</Link>
+                    <Link to={'/'} className="link link-hover">Home</Link>
                     <Link to={'/team'} className="link link-hover">About us</Link>
                     
                 </nav>

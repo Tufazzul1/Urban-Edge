@@ -9,8 +9,6 @@ const Navbar = () => {
     // console.log(user)
     const [isOpen, setIsOpen] = useState(false);
 
-
-
     const handleSignOut = () => {
         logOut()
             .then()
